@@ -1,3 +1,7 @@
--@posts.each do |post|
-	link_to @post.link
-end
+- if @posts
+	%ul
+	- @posts.each do |post|
+		%li= link_to post.title, post
+
+%p
+= link_to "Add Post", new_post_path
