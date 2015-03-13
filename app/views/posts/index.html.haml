@@ -1,7 +1,9 @@
 - if @posts
 	%ul
 	- @posts.each do |post|
-		%li= link_to post.title, post
+		%li
+			= image_tag post.image.url(:medium)
+			= link_to post.title, post
 
 %p
 = link_to "Add Post", new_post_path
