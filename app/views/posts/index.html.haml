@@ -6,5 +6,8 @@
 			= link_to post.title, post
 			%p #{pluralize(post.comments.count, "Comment")}
 
+			%p= pluralize(post.get_upvotes.size, "Like")
+			%p= pluralize(post.get_downvotes.size, "Dislike")
+
 %p
 = link_to "Add Post", new_post_path
