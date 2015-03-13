@@ -4,6 +4,7 @@
 		%li
 			= image_tag post.image.url(:medium)
 			= link_to post.title, post
+			%p #{pluralize(post.comments.count, "Comment")}
 
 %p
 = link_to "Add Post", new_post_path
