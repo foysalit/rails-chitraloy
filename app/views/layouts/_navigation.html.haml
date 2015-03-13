@@ -1,0 +1,14 @@
+%aside.left-off-canvas-menu
+	%ul.off-canvas-list
+		%li
+			%label Menu
+		- if user_signed_in?
+			%li= link_to "Sign Out", destroy_user_session_path, method: :delete
+			%li= link_to "Add Post", new_post_path
+		-else
+			%li= link_to "Sign Up", new_user_registration_path
+			%li= link_to "Sign In", new_user_session_path
+		
+		%li= link_to "Posts", root_path 
+		%li
+			%a{:href => "#"} Users
